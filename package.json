@@ -4,7 +4,8 @@
   "description": "<h1 align=\"center\">Prueba tecnica Fullstack iVentas</h1>",
   "private": true,
   "scripts": {
-    "dev:backend": "npm run dev --workspace=chat-backend"
+    "dev:backend": "npm run dev --workspace=chat-backend",
+    "dev:frontend": "npm run dev --workspace=chat-frontend"
   },
   "repository": {
     "type": "git",
