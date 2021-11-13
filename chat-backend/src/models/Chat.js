@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose')
 
-const shema = new Schema(
+const schema = new Schema(
   {
     Customer: {
       ref: 'Customer',
@@ -24,6 +24,6 @@ const shema = new Schema(
   { versionKey: false, timestamps: true }
 )
 
-const Chat = model('Chat', shema)
+const Chat = model('Chat', schema)
 
 module.exports = Chat
