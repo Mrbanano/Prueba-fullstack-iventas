@@ -24,8 +24,7 @@ const schema = new Schema({
     unique: true
   },
   Password: {
-    type: String,
-    required: true
+    type: String
   },
   id_Messages: [
     {
