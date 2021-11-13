@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose')
+const { genSaltSync, hashSync, compare } = require('bcrypt')
 
-const schenma = new Schema({
+const schema = new Schema({
   Name: {
     type: String,
     required: true
@@ -17,12 +18,12 @@ const schenma = new Schema({
     type: String,
     required: true
   },
-  email: {
+  Email: {
     type: String,
     required: true,
     unique: true
   },
-  password: {
+  Password: {
     type: String,
     required: true
   },
@@ -34,6 +35,14 @@ const schenma = new Schema({
   ]
 })
 
-const Vendor = model('Vendor', schenma)
+schema.statics.encryptPassword = async (password) => {
+  const salt = await genSaltSync(10)
+  return await hashSync(password, salt)
+}
+schema.statics.comparePassword = async (password, recivedpassword) => {
+  return await compare(password, recivedpassword)
+}
+
+const Vendor = model('Vendor', schema)
 
 module.exports = Vendor

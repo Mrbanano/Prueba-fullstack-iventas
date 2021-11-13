@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose')
+const { genSaltSync, hashSync, compare } = require('bcrypt')
 
 const schema = new Schema({
   Name: {
@@ -17,12 +18,12 @@ const schema = new Schema({
     type: Number,
     required: true
   },
-  email: {
+  Email: {
     type: String,
     required: true,
     unique: true
   },
-  password: {
+  Password: {
     type: String,
     required: true
   },
@@ -38,7 +39,7 @@ const schema = new Schema({
     type: Number,
     required: true
   },
-  problem: {
+  Problem: {
     type: String
   },
   id_Messages: [
@@ -48,6 +49,14 @@ const schema = new Schema({
     }
   ]
 })
+
+schema.statics.encryptPassword = async (password) => {
+  const salt = await genSaltSync(10)
+  return await hashSync(password, salt)
+}
+schema.statics.comparePassword = async (password, recivedpassword) => {
+  return await compare(password, recivedpassword)
+}
 
 const Customer = model('Customer', schema)
 
