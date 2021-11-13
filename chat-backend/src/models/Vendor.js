@@ -1,24 +1,20 @@
 const { Schema, model } = require('mongoose')
 
-const schema = new Schema({
+const schenma = new Schema({
   Name: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   lastName: {
     type: String,
     required: true
   },
-  surName: {
+  Phone: {
     type: String,
     required: true
   },
   Avatar: {
-    type: String
-  },
-  Age: {
-    type: Number,
+    type: String,
     required: true
   },
   email: {
@@ -30,21 +26,6 @@ const schema = new Schema({
     type: String,
     required: true
   },
-  CURP: {
-    type: String,
-    required: true
-  },
-  Phone: {
-    type: Number,
-    required: true
-  },
-  Priotiry: {
-    type: Number,
-    required: true
-  },
-  problem: {
-    type: String
-  },
   id_Messages: [
     {
       ref: 'Message',
@@ -53,6 +34,6 @@ const schema = new Schema({
   ]
 })
 
-const User = model('User', schema)
+const Vendor = model('Vendor', schenma)
 
-module.exports = User
+module.exports = Vendor
