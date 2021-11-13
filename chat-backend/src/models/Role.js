@@ -2,12 +2,12 @@ const { Schema, model } = require('mongoose')
 
 const schema = new Schema(
   {
-    name: {
+    Name: {
       type: String,
       required: true,
       unique: true
     },
-    description: {
+    Description: {
       type: String,
       required: true
     }

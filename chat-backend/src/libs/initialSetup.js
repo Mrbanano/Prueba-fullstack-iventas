@@ -1,9 +1,9 @@
-const createDefaultCustomer = require('./CreateDefaultCustomer')
-const createDefaultVendor = require('./CreateDefaultVendor')
+const CreateDefaultUsers = require('./CreateDefaultUsers')
+const CreateDefaultRoles = require('./CreateDefaultRoles')
 
 const initialSetups = async () => {
-  await createDefaultCustomer()
-  await createDefaultVendor()
+  await CreateDefaultRoles()
+  await CreateDefaultUsers()
 }
 
 module.exports = initialSetups
