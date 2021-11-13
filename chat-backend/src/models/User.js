@@ -7,16 +7,13 @@ const schema = new Schema({
     required: true
   },
   lastName: {
-    type: String,
-    required: true
-  },
-  Phone: {
-    type: String,
-    required: true
+    type: String
   },
   Avatar: {
-    type: String,
-    required: true
+    type: String
+  },
+  Age: {
+    type: Number
   },
   Email: {
     type: String,
@@ -25,6 +22,26 @@ const schema = new Schema({
   },
   Password: {
     type: String
+  },
+  CURP: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  Phone: {
+    type: Number,
+    required: true
+  },
+  Priotiry: {
+    type: String,
+    required: true
+  },
+  Problem: {
+    type: String
+  },
+  Role: {
+    ref: 'Role',
+    type: Schema.Types.ObjectId
   },
   id_Messages: [
     {
@@ -42,6 +59,6 @@ schema.statics.comparePassword = async (password, recivedpassword) => {
   return await compare(password, recivedpassword)
 }
 
-const Vendor = model('Vendor', schema)
+const User = model('User', schema)
 
-module.exports = Vendor
+module.exports = User

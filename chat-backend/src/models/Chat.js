@@ -3,12 +3,12 @@ const { Schema, model } = require('mongoose')
 const schema = new Schema(
   {
     Customer: {
-      ref: 'Customer',
+      ref: 'User',
       type: Schema.Types.ObjectId,
       required: true
     },
     Vendor: {
-      ref: 'Vendor',
+      ref: 'User',
       type: Schema.Types.ObjectId,
       required: true
     },
