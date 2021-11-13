@@ -3,8 +3,6 @@ const router = Router()
 
 const { SignUp, SignIn } = require('../controllers/AuthController')
 
-router.get('/', (req, res) => {
-  console.log('AuthRouter')
-})
+router.post('/signin', SignIn)
 
 module.exports = router
