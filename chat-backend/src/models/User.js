@@ -4,18 +4,18 @@ const { genSaltSync, hashSync, compare } = require('bcrypt')
 const schema = new Schema({
   Name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   lastName: {
     type: String,
     required: true
   },
-  Phone: {
-    type: String,
-    required: true
-  },
   Avatar: {
-    type: String,
+    type: String
+  },
+  Age: {
+    type: Number,
     required: true
   },
   Email: {
@@ -26,6 +26,25 @@ const schema = new Schema({
   Password: {
     type: String,
     required: true
+  },
+  CURP: {
+    type: String,
+    required: true
+  },
+  Phone: {
+    type: Number,
+    required: true
+  },
+  Priotiry: {
+    type: Number,
+    required: true
+  },
+  Problem: {
+    type: String
+  },
+  Role: {
+    ref: 'Role',
+    type: Schema.Types.ObjectId
   },
   id_Messages: [
     {
@@ -43,6 +62,6 @@ schema.statics.comparePassword = async (password, recivedpassword) => {
   return await compare(password, recivedpassword)
 }
 
-const Vendor = model('Vendor', schema)
+const User = model('User', schema)
 
-module.exports = Vendor
+module.exports = User
