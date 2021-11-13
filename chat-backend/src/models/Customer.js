@@ -4,19 +4,16 @@ const { genSaltSync, hashSync, compare } = require('bcrypt')
 const schema = new Schema({
   Name: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   lastName: {
-    type: String,
-    required: true
+    type: String
   },
   Avatar: {
     type: String
   },
   Age: {
-    type: Number,
-    required: true
+    type: Number
   },
   Email: {
     type: String,
@@ -24,19 +21,19 @@ const schema = new Schema({
     unique: true
   },
   Password: {
-    type: String,
-    required: true
+    type: String
   },
   CURP: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   Phone: {
     type: Number,
     required: true
   },
   Priotiry: {
-    type: Number,
+    type: String,
     required: true
   },
   Problem: {
