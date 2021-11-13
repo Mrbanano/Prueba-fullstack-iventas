@@ -1,21 +1,13 @@
-const Customer = require('../models/Customer')
-const Vendor = require('../models/Vendor')
-
+const User = require('../models/User')
 const SignUp = async (req, res, next) => {}
 
 const SignIn = async (req, res, next) => {
   try {
     const Email = req.body.Email
-    const isCustomer = await Customer.findOne({ Email })
-    const isVendor = await Vendor.findOne({ Email })
 
-    console.log(isCustomer)
-    console.log(isVendor)
+    const foundUser = await User.findOne({ Email })
 
-    res.status(200).json({
-      isCustomer,
-      isVendor
-    })
+    res.status(200).send(foundUser)
   } catch (error) {
     res.status(500).send(error.message)
   }
