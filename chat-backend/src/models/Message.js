@@ -2,17 +2,17 @@ const { Schema, model } = require('mongoose')
 
 const shema = new Schema(
   {
-    id_transmission: {
-      ref: 'User',
+    Customer: {
+      ref: 'Customer',
       type: Schema.Types.ObjectId,
       required: true
     },
-    id_Receptor: {
-      ref: 'User',
+    Vendor: {
+      ref: 'Vendor',
       type: Schema.Types.ObjectId,
       required: true
     },
-    message: {
+    Message: {
       type: String,
       required: true
     }
