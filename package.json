@@ -1,0 +1,19 @@
+{
+  "name": "prueba-fullstack-iventas",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Prueba tecnica Fullstack iVentas</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mrbanano/Prueba-fullstack-iventas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mrbanano/Prueba-fullstack-iventas/issues"
+  },
+  "homepage": "https://github.com/Mrbanano/Prueba-fullstack-iventas#readme"
+}
