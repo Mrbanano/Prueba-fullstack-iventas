@@ -43,6 +43,10 @@ const schema = new Schema({
     ref: 'Role',
     type: Schema.Types.ObjectId
   },
+  online: {
+    type: Boolean,
+    default: false
+  },
   id_Messages: [
     {
       ref: 'Message',
