@@ -11,7 +11,8 @@ const cors = require('cors')
 /*
  * requieres routers
  */
-const AuthRouter = require('./routes/AuthRouter')
+const AuthRouter = require('./routes/Auth.routes')
+const MessageRouter = require('./routes/Message.routes')
 
 /*
  *Initial setup
@@ -33,6 +34,7 @@ app.use(json())
  *Routing
  */
 app.use('/chat/api/v1/Auth', AuthRouter)
+app.use('/chat/api/v1/Message', MessageRouter)
 
 /**
  *  Export server
