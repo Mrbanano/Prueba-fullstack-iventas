@@ -1,0 +1,67 @@
+.LoginForm {
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  background-color: var(--white);
+}
+
+.Login-header {
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.Login-title {
+  margin-block-start: 87px;
+  margin-block-end: 52px;
+  font: var(--headLine1Mobile);
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-block-end: 12px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.input-group > .Label {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font: var(--LabelMobile);
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.input-group > input {
+  margin: 0;
+  padding-inline-start: 18px;
+  block-size: 38px;
+  background-color: #f6f8fc;
+  border: none;
+  border-radius: 24px;
+  font: var(--inputTextMobile);
+  font-weight: 600;
+  color: var(--black);
+}
+.input-group > input:focus {
+  outline: none;
+}
+
+.btn_Login {
+  margin-block-start: 94px;
+  margin-block-end: 90px;
+  padding-block-start: 11.5px;
+  padding-block-end: 11.5px;
+  inline-size: 249px;
+  align-self: center;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--btn_green);
+  font: var(--Btn_textMobile);
+  font-weight: 700;
+  color: var(--white);
+}

@@ -1,44 +1,26 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import React, { useEffect, useState } from 'react'
 import './App.css'
+import { loginServices } from './Services/auth'
+import Login from './Pages/Login'
+import Chat from './Pages/Chat'
+
+const LoginContext = React.createContext()
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [Email, setEmail] = useState('')
+  const [Password, setPassword] = useState('')
+  const [User, setUser] = useState(null)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <LoginContext.Provider
+      value={{ Email, Password, setEmail, setPassword, User, setUser }}
+    >
+      <div className="App">
+        <div className="App-container">
+          <div className="App-content">{User ? <Chat /> : <Login />}</div>
+        </div>
+      </div>
+    </LoginContext.Provider>
   )
 }
 
