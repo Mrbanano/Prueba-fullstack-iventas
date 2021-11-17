@@ -1,0 +1,8 @@
+.conversation-content {
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  block-size: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}

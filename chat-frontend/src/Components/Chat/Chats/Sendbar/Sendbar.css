@@ -1,0 +1,32 @@
+.TextToSend {
+  padding-inline-start: 15px;
+  padding-inline-end: 15px;
+  padding-block-start: 18px;
+  padding-block-end: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  block-size: 72px;
+  background-color: var(--input-background);
+}
+
+.Send {
+  border: none;
+  inline-size: 33.77px;
+  block-size: 33.77px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green);
+}
+
+.sendtxt {
+  margin-inline-end: 8px;
+  min-inline-size: 80%;
+  min-block-size: 33px;
+  border-radius: 20px;
+  border: none;
+}

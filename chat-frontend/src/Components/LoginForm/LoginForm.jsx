@@ -3,7 +3,6 @@ import './LoginForm.css'
 
 function LoginForm() {
   //const data = useContext(LoginContext)
-  console.log(data)
   return (
     <div className="LoginForm">
       <div className="LoginForm-container">

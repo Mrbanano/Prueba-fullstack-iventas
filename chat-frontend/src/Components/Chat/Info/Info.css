@@ -1,0 +1,29 @@
+.Info {
+  border: 2px solid red;
+  inline-size: 100%;
+  text-align: center;
+}
+
+.Info-data {
+  text-align: left;
+  border: 2px solid red;
+}
+
+.Info-group {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 23px;
+  padding-inline-end: 23px;
+}
+
+.Info-group > p {
+  width: 307.19px;
+  height: 38px;
+  border-radius: 24px;
+  font: var(--inputTextMobile);
+  border: none;
+  background-color: #f6f8fc;
+
+  color: black;
+}

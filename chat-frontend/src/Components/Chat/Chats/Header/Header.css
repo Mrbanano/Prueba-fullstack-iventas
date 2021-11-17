@@ -1,0 +1,42 @@
+.Chat-header {
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  padding-block-start: 14px;
+  padding-block-end: 14px;
+  box-sizing: border-box;
+  block-size: 11.25vh;
+  max-block-size: 72px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--green);
+}
+
+.Chat-header-image {
+  inline-size: 44px;
+  block-size: 44px;
+}
+
+.Chat-header-image > img {
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 50%;
+}
+
+.header-info {
+  width: 70%;
+  align-content: flex-start;
+}
+
+.header-info-name {
+  font: var(--inputTextMobile);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.header-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

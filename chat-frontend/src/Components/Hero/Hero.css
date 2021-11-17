@@ -1,6 +1,7 @@
 .Hero-container {
   block-size: 108px;
   box-sizing: border-box;
+  background-color: var(--background-color);
 }
 
 .Hero-content {

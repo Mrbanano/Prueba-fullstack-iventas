@@ -43,6 +43,9 @@ const schema = new Schema({
     ref: 'Role',
     type: Schema.Types.ObjectId
   },
+  Promotion: {
+    type: String
+  },
   online: {
     type: Boolean,
     default: false

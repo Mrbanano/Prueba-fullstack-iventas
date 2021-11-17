@@ -1,0 +1,14 @@
+.Chat {
+  inline-size: 100%;
+  background-color: var(--background-color);
+  display: none;
+}
+
+.Chat-content {
+  border: 2px solid green;
+  block-size: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
