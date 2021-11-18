@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const config = require('../config')
 
-;(async () => {
+const dbConnection = async () => {
   try {
     const connection =
       process.env.NODE_ENV === 'develop'
@@ -17,4 +17,8 @@ const config = require('../config')
   } catch (error) {
     console.error(error)
   }
-})()
+}
+
+module.exports = {
+  dbConnection
+}

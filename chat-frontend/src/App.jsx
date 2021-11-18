@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import './App.css'
-import Login from './Pages/Login'
-import Chat from './Pages/Chat'
 import AppRouter from './router/AppRouter'
 import { AuthProvider } from './auth/AuthContext'
+import { SocketProvider } from './context/SocketContext'
+import './App.css'
 
 function App() {
   const [Email, setEmail] = useState('')
@@ -12,13 +11,15 @@ function App() {
 
   return (
     <AuthProvider>
-      <AppRouter>
+      <SocketProvider>
         <div className="App">
           <div className="App-container">
-            <div className="App-content">{User ? <Chat /> : <Login />}</div>
+            <div className="App-content">
+              <AppRouter />
+            </div>
           </div>
         </div>
-      </AppRouter>
+      </SocketProvider>
     </AuthProvider>
   )
 }

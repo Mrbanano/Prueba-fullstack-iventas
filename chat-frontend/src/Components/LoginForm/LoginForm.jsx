@@ -40,6 +40,7 @@ function LoginForm() {
     }
     const msg = await login(Email, Password)
     console.log(msg)
+    alert(msg)
   }
   return (
     <div className="LoginForm">
@@ -76,9 +77,7 @@ function LoginForm() {
                   onChange={onChange}
                 />
               </div>
-              <button disabled={!isOk()} type="submit" className="btn_Login">
-                Iniciar sesión
-              </button>
+              <button className="btn_Login">Iniciar sesión</button>
             </form>
           </div>
         </div>
