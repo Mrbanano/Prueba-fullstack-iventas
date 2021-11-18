@@ -3,11 +3,15 @@
 
   --fontBase: 'Poppins', sans-serif;
   --headLine1Mobile: 22px/33px var(--fontBase);
+  --headLine2Mobile: 30px/33px var(--fontBase);
   --LabelMobile: 12px/18px var(--fontBase);
   --inputTextMobile: 14px/21px var(--fontBase);
+  --Phone: 16px/24px var(--fontBase);
   --Btn_textMobile: 700 18px/27px var(--fontBase);
+
   /* Colors */
   --background-color: #f3f4f8;
+  --input-background: #eef0f6;
   --white: #ffffff;
   --green: #00cd7e;
   --btn_green: #20cc81;
@@ -15,11 +19,22 @@
   --black: #2c2e50;
   --gray: #9193a6;
   --inputBg: #f6f8fc;
+  --softblue: #0099ff0d;
+  --blue-ligth: #f2faff;
 }
-
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--white);
   font-family: 'Poppins', sans-serif;
+  max-inline-size: 1527px;
+  block-size: 100vh;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1500px) {
+  body {
+    position: absolute;
+    left: calc(50% - 576px);
+  }
 }

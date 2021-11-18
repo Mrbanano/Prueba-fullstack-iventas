@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import { loginServices } from './Services/auth'
 import Login from './Pages/Login'
 import Chat from './Pages/Chat'
-
-const LoginContext = React.createContext()
+import AppRouter from './router/AppRouter'
 
 function App() {
   const [Email, setEmail] = useState('')
@@ -12,15 +10,13 @@ function App() {
   const [User, setUser] = useState(null)
 
   return (
-    <LoginContext.Provider
-      value={{ Email, Password, setEmail, setPassword, User, setUser }}
-    >
+    <AppRouter>
       <div className="App">
         <div className="App-container">
           <div className="App-content">{User ? <Chat /> : <Login />}</div>
         </div>
       </div>
-    </LoginContext.Provider>
+    </AppRouter>
   )
 }
 

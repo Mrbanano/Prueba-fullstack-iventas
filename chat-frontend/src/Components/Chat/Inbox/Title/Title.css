@@ -1,0 +1,22 @@
+.Title-container {
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  background-color: var(--softblue);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.Inbox-header-title {
+  margin-block-start: 20px;
+  margin-block-end: 20px;
+  font: var(--headLine2Mobile);
+  font-weight: 700;
+}
+
+.Inbox-title {
+  display: flex;
+  align-items: center;
+}

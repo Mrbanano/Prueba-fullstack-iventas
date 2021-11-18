@@ -1,0 +1,45 @@
+.Inbox-header {
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  margin-block-end: 73px;
+  text-align: center;
+  display: none;
+}
+
+.Inbox-header-avatar {
+  margin-block-start: 64px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-end: 18px;
+  inline-size: 105px;
+  block-size: 105px;
+  box-sizing: border-box;
+}
+
+.Inbox-header-text-name {
+  margin-block-end: 0;
+  font: var(--Btn_textMobile);
+}
+.Inbox-header-text-number {
+  margin-block-start: 4px;
+  font: var(--Phone);
+}
+
+.Inbox-header-img {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Inbox-header {
+    display: block;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}
+*/

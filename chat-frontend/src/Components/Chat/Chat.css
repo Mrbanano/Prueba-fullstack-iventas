@@ -1,9 +1,22 @@
+.Chat {
+  inline-size: 100%;
+  max-inline-size: 1200px;
+  background-color: var(--background-color);
+  display: none;
+}
+
+.Chat-content {
+  block-size: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .Login-content {
-    display: flex;
-    flex-direction: row;
-    block-size: 100vh;
+  .Chat {
+    display: block;
   }
 }
 

@@ -3,11 +3,10 @@ import './LoginForm.css'
 
 function LoginForm() {
   //const data = useContext(LoginContext)
-  console.log(data)
   return (
     <div className="LoginForm">
       <div className="LoginForm-container">
-        <div className="Login-content">
+        <div className="LoginForm-content">
           <div className="Login-header">
             <h1 className="Login-title">Inicia sesión</h1>
           </div>
@@ -49,33 +48,3 @@ function LoginForm() {
 }
 
 export default LoginForm
-
-/**
- * <div>          
-          <form onSubmit={handleLogin}>
-            <div>
-              <label htmlFor="Email">Correo electrónico</label>
-              
-            </div>
-            <div>
-              <label htmlFor="Password">Contraseña</label>
-              <input
-                id="Password"
-                type="password"
-                value={Password}
-                name="Password"
-                required
-                onChange={({ target }) => setPassword(target.value)}
-              />
-            </div>
-            <button>Iniciar sesión</button>
-          </form>
-          </div>
-
-
-          const handleLogin = async (e) => {
-    e.preventDefault()
-    const { data } = await loginServices({ Email, Password })
-    setUser(data)
-  }
- */
