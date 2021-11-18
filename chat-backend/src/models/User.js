@@ -44,7 +44,8 @@ const schema = new Schema({
     type: Schema.Types.ObjectId
   },
   Promotion: {
-    type: String
+    type: String,
+    default: '0%'
   },
   online: {
     type: Boolean,
