@@ -43,6 +43,17 @@ const verifyToken = async (req, res, next) => {
   }
 }
 
+const verifyTokenSocket = (token = '') => {
+  try {
+    const decoded = jwt.verify(token, SECRET)
+    return [true, decoded.id]
+  } catch (error) {
+    console.log('[❌]', error.message)
+    return [false, null]
+  }
+}
+
 module.exports = {
-  verifyToken
+  verifyToken,
+  verifyTokenSocket
 }
