@@ -16,7 +16,7 @@ const SignIn = async (req, res, next) => {
   try {
     const { Email, Password } = req.body
 
-    const foundUser = await User.findOne({ Email })
+    const foundUser = await User.findOne({ Email }).populate('Roles', 'Name')
 
     if (!foundUser) {
       res.status(403).json({
@@ -53,17 +53,18 @@ const SignIn = async (req, res, next) => {
         token,
         user: {
           id: foundUser._id,
-          name: foundUser.Name,
+          Name: foundUser.Name,
           lastName: foundUser.lastName,
-          email: foundUser.Email,
-          role: foundUser.Role,
-          avatar: foundUser.Avatar,
+          Phone: foundUser.Phone,
+          Avatar: foundUser.Avatar,
           Age: foundUser.Age,
-          phone: foundUser.Phone,
-          problem: foundUser.Problem,
-          priority: foundUser.Priotiry,
+          Email: foundUser.Email,
+          Priority: foundUser.Priotiry,
+          Problem: foundUser.Problem,
+          Promotion: foundUser.Promotion,
           CURP: foundUser.CURP,
-          messages: foundUser.id_Messages
+          Rol: foundUser.Roles.Name,
+          online: foundUser.online
         }
       }
     })
