@@ -1,29 +1,119 @@
 .Info {
-  border: 2px solid red;
   inline-size: 100%;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  block-size: 100vh;
+  overflow: hidden;
+  display: none;
+}
+.Info-container {
+  background-color: transparent;
+}
+
+.Info-content {
+  margin-block-start: 120px;
+  border: 2px solid transparent;
+  border-radius: 24px 24px 0 0;
+  background-color: var(--white);
+}
+
+.Info-header-image {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-start: -56px;
+  margin-block-end: 12px;
+  width: 116px;
+  height: 116px;
+}
+
+.Info-name-user {
+  margin-block-end: 0px;
+  font: var(--Btn_textMobile);
+}
+
+.Info-phone-user {
+  margin-block-start: 0px;
+  margin-block-end: 13px;
+  font: var(--inputTextMobile);
+}
+
+.Info-edit-user {
+  display: none;
+  margin-block-start: 0px;
+  font: var(--inputTextMobile);
+  font-weight: 700;
+  color: var(--green);
 }
 
 .Info-data {
   text-align: left;
-  border: 2px solid red;
+  block-size: 100vh;
+  overflow-x: scroll;
+}
+
+details {
+  box-sizing: border-box;
+}
+summary {
+  padding-inline-start: 23px;
+  padding-inline-end: 23px;
+  background-color: var(--blue-ligth);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  block-size: 44px;
+  display: none;
+}
+
+.Icon > img:active {
+  transform: rotate(180deg);
 }
 
 .Info-group {
-  border: 2px solid green;
-  display: flex;
-  flex-direction: column;
   padding-inline-start: 23px;
   padding-inline-end: 23px;
+  margin-block-end: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
-.Info-group > p {
+.Info-group > label {
+  font: var(----LabelMobile);
+  color: var(--gray);
+}
+
+.Info-field {
+  padding-inline-start: 18px;
   width: 307.19px;
   height: 38px;
   border-radius: 24px;
   font: var(--inputTextMobile);
   border: none;
   background-color: #f6f8fc;
-
+  display: flex;
+  align-items: center;
   color: black;
 }
+.space {
+  block-size: 300px;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Info {
+    display: block;
+    max-inline-size: 312px;
+    background-color: var(--white);
+  }
+  summary {
+    display: flex;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}
+*/

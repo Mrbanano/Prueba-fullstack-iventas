@@ -25,8 +25,13 @@
 
 .sendtxt {
   margin-inline-end: 8px;
+  padding-inline-start: 18px;
   min-inline-size: 80%;
   min-block-size: 33px;
   border-radius: 20px;
   border: none;
+}
+
+.sendtxt:focus {
+  outline: none;
 }

@@ -18,3 +18,31 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Hero-container {
+    inline-size: 36vw;
+    block-size: 100%;
+    max-inline-size: 557px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Hero-image {
+    margin: 0;
+    inline-size: 400px;
+    block-size: 450px;
+    background-image: url('/src/static/img/Hero.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}
+*/

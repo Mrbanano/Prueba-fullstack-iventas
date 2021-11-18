@@ -20,11 +20,14 @@
   --gray: #9193a6;
   --inputBg: #f6f8fc;
   --softblue: #0099ff0d;
+  --blue-ligth: #f2faff;
 }
-
 body {
   margin: 0;
   padding: 0;
   background-color: var(--white);
   font-family: 'Poppins', sans-serif;
+  max-inline-size: 1527px;
+  block-size: 100vh;
+  overflow: hidden;
 }

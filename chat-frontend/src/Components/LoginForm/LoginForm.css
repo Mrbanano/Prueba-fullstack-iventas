@@ -64,3 +64,34 @@ form {
   font-weight: 700;
   color: var(--white);
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .LoginForm {
+    inline-size: 100%;
+    max-inline-size: 970px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .LoginForm-content {
+    min-inline-size: 300px;
+    inline-size: 557px;
+  }
+  .input-group {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    inline-size: 300px;
+  }
+}
+
+/*Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .input-group {
+    inline-size: 100%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}
+*/

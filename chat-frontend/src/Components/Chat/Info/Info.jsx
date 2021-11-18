@@ -11,7 +11,7 @@ function Info() {
     CURP: 'GAAL78371287319JCJ',
     Priotiry: 'Baja',
     Problem: 'Informes',
-    Promotion:"25%",
+    Promotion: '25%',
     Roles: 'Vendor'
   }
 
@@ -24,42 +24,78 @@ function Info() {
               <img src={user.Avatar} alt="Avatar de " />
             </div>
             <div className="Info-header-text">
-              <p>{`${user.Name} ${user.lastName}`}</p>
-              <p>{user.Phone}</p>
-              <p>
-                <a href="#">Editar datos</a>
-              </p>
+              <p className="Info-name-user">{`${user.Name} ${user.lastName}`}</p>
+              <p className="Info-phone-user">{user.Phone}</p>
+              <div>
+                <a className="Info-edit-user" href="#">
+                  Editar datos
+                </a>
+              </div>
             </div>
             <div className="Info-body">
               <details open>
                 <summary>
                   <strong>Datos del contacto</strong>
+                  <div className="Icon">
+                    <img src="/src/static/icon/close.svg" alt="close" />
+                  </div>
                 </summary>
                 <div className="Info-data">
                   <div className="Info-group">
                     <label htmlFor="email">Correo</label>
-                    <p> {user.Name}</p>
+                    <div className="Info-field">
+                      <p>{user.Email}</p>
+                    </div>
+                  </div>
+                  <div className="Info-group">
+                    <label htmlFor="Name">Nombre</label>
+                    <div className="Info-field">
+                      <p>{user.Name}</p>
+                    </div>
+                  </div>
+                  <div className="Info-group">
+                    <label htmlFor="lastName">Apellido</label>
+                    <div className="Info-field">
+                      <p>{user.lastName}</p>
+                    </div>
+                  </div>
+                  <div className="Info-group">
+                    <label htmlFor="Phone">Telefono</label>
+                    <div className="Info-field">
+                      <p>{user.Phone}</p>
+                    </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Prioridad">Prioridad</label>
-                    <input type="text" id="Prioridad" placeholder={user.Priotiry} disabled />
+                    <div className="Info-field">
+                      <p>{user.Priotiry}</p>
+                    </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Problema">Problema</label>
-                    <input type="text" id="Problema" placeholder={user.Problem} disabled />
+                    <div className="Info-field">
+                      <p>{user.Problem}</p>
+                    </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Promocion">Promocion</label>
-                    <input type="text" id="Promocion" placeholder={user.Promotion} disabled />
+                    <div className="Info-field">
+                      <p>{user.Promotion}</p>
+                    </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="CURP">CURP</label>
-                    <input type="text" id="CURP" placeholder={user.CURP} disabled />
+                    <div className="Info-field">
+                      <p>{user.CURP}</p>
+                    </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Edad">Edad</label>
-                    <input type="text" id="Edad" placeholder={user.Age} disabled />
+                    <div className="Info-field">
+                      <p>{user.Age}</p>
+                    </div>
                   </div>
+                  <div className="space"></div>
                 </div>
               </details>
             </div>
