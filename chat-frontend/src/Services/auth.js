@@ -9,3 +9,17 @@ export const loginServices = async (credentials) => {
     return error?.response?.data
   }
 }
+
+export const verifyTokenServices = async () => {
+  try {
+    const token = localStorage.getItem('token') || ''
+    const { data } = await axios.get(`${basesUrl}verifytoken`, {
+      headers: {
+        'x-access-token': `${token}`
+      }
+    })
+    return data
+  } catch (error) {
+    return error?.response?.data
+  }
+}

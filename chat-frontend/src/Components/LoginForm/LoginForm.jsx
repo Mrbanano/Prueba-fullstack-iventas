@@ -20,15 +20,24 @@ function LoginForm() {
       [name]: value
     })
   }
+  const validateEmail = (email) => {
+    var re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(String(email).toLowerCase())
+  }
+
+  const isOk = () => {
+    const { Email, Password } = form
+    return validateEmail(Email) && Password.length > 0
+  }
 
   const onSubmit = async (e) => {
     e.preventDefault()
     const { Email, Password } = form
 
-    if (!emailRegexp.test(Email)) {
-      return alert('El correo no es válido')
+    if (!isOk()) {
+      return alert('Datos incorrectos')
     }
-
     const msg = await login(Email, Password)
     console.log(msg)
   }
@@ -67,7 +76,9 @@ function LoginForm() {
                   onChange={onChange}
                 />
               </div>
-              <button className="btn_Login">Iniciar sesión</button>
+              <button disabled={!isOk()} type="submit" className="btn_Login">
+                Iniciar sesión
+              </button>
             </form>
           </div>
         </div>

@@ -1,10 +1,11 @@
-import { createContext, useState } from 'react'
-import { loginServices } from '../services/auth'
+import { createContext, useCallback, useState } from 'react'
+import { loginServices, verifyTokenServices } from '../services/auth'
 
 export const AuthContext = createContext()
 
 const initialState = {
   id: null,
+  isLoading: true,
   isAuthenticated: false,
   Name: null,
   lastName: null,
@@ -29,8 +30,10 @@ export const AuthProvider = ({ children }) => {
     if (data.message) return data.message
 
     localStorage.setItem('token', data.token)
+
     const { user } = data
     setAuth({
+      isLoading: false,
       isAuthenticated: true,
       id: user.id,
       Name: user.Name,
@@ -50,8 +53,59 @@ export const AuthProvider = ({ children }) => {
     return 'Se inicio correctamente sesión'
   }
 
-  const logout = () => {}
-  const verifyToken = () => {}
+  const logout = () => {
+    localStorage.removeItem('token')
+    setAuth({
+      isLoading: false,
+      isAuthenticated: false
+    })
+  }
+
+  const verifyToken = useCallback(async () => {
+    const token = localStorage.getItem('token')
+
+    if (token == null || token == undefined || !token) {
+      setAuth({
+        isLoading: false,
+        isAuthenticated: false
+      })
+      return false
+    }
+
+    const response = await verifyTokenServices()
+
+    if (response.success == false) {
+      setAuth({
+        isLoading: false,
+        isAuthenticated: false
+      })
+      return false
+    }
+
+    localStorage.setItem('token', response.data.token)
+
+    const { user } = response.data
+    setAuth({
+      isLoading: false,
+      isAuthenticated: true,
+      id: user.id,
+      Name: user.Name,
+      lastName: user.lastName,
+      Phone: user.Phone,
+      Avatar: user.Avatar,
+      Age: user.Age,
+      Email: user.Email,
+      Priority: user.Priority,
+      Problem: user.Problem,
+      Promotion: user.Promotion,
+      CURP: user.CURP,
+      Rol: user.Rol,
+      online: user.online
+    })
+
+    return true
+  }, [])
+
   return (
     <AuthContext.Provider
       value={{

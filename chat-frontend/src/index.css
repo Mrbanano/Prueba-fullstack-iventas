@@ -33,8 +33,4 @@ body {
 }
 
 @media only screen and (min-width: 1500px) {
-  body {
-    position: absolute;
-    left: calc(50% - 576px);
-  }
 }
