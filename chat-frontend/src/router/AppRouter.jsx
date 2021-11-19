@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react'
 import { AuthContext } from '../auth/AuthContext'
 import Login from '../Pages/Login'
 import ChatPage from '../Pages/Chat'
+import Loading from '../Pages/Loading'
 import { PublicRoutes } from './PublicRoutes'
 import { PrivateRoutes } from './PrivateRoutes'
 
@@ -14,7 +15,7 @@ function AppRouter() {
   }, [verifyToken])
 
   if (auth.isLoading) {
-    return <h1>Espere por favor</h1>
+    return <Loading />
   }
 
   return (

@@ -1,8 +1,12 @@
 .Chat {
-  inline-size: 100%;
+  inline-size: 100vw;
+  box-sizing: border-box;
   max-inline-size: 1200px;
   background-color: var(--background-color);
   display: none;
+}
+.Chat-visible {
+  display: block;
 }
 
 .Chat-content {

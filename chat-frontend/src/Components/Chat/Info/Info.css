@@ -1,11 +1,15 @@
 .Info {
-  inline-size: 100%;
+  inline-size: 100vw;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   block-size: 100vh;
   overflow: hidden;
-  display: none;
+  display: block;
+}
+
+.Info-visible {
+  display: block;
 }
 .Info-container {
   background-color: transparent;
@@ -66,7 +70,7 @@ summary {
   display: none;
 }
 
-.Icon > img:active {
+.flip {
   transform: rotate(180deg);
 }
 
@@ -96,9 +100,16 @@ summary {
   color: black;
 }
 .space {
-  block-size: 300px;
+  block-size: 400px;
 }
 
+.Info-back-header {
+  padding-inline-start: 20px;
+  padding-block-start: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .Info {
@@ -124,11 +135,10 @@ summary {
   .space {
     block-size: 400px;
   }
+  .Info-back-header {
+    display: none;
+  }
+  .space {
+    block-size: 300px;
+  }
 }
-
-/* Large devices (laptops/desktops, 992px and up) 
-@media only screen and (min-width: 992px) {...}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) 
-@media only screen and (min-width: 1200px) {...}
-*/

@@ -15,6 +15,11 @@ export const chatReducer = (state, action) => {
         receiver: action.payload,
         messages: []
       }
+    case types.clearUserSelected:
+      return {
+        ...state,
+        receiver: null
+      }
     case types.newMessage:
       if (state.receiver.id === action.payload.Receiver) {
         return {

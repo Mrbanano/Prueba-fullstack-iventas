@@ -18,7 +18,7 @@ function Header() {
         <p className="Inbox-header-text-name">{`${auth.Name}  ${auth.lastName}.`}</p>
         <p className="Inbox-header-text-number">{auth.Phone}</p>
 
-        <button class="Inbox-logout" onClick={logout}>
+        <button className="Inbox-logout" onClick={logout}>
           Cerrar Sesión
         </button>
       </div>

@@ -1,10 +1,10 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { ChatContext } from '../../../context/Chat/ChatContex'
 import './Info.css'
 
-function Info() {
+function Info({ showInfo, setshowInfo }) {
   const { chatState } = useContext(ChatContext)
-
+  const [Show, setShow] = useState(true)
   const {
     Name,
     lastName,
@@ -18,9 +18,22 @@ function Info() {
     Promotion
   } = chatState.receiver
 
+  const ShowInfo = () => {
+    setShow(!Show)
+  }
+
+  const ShowInfoPage = () => {
+    setshowInfo(!showInfo)
+  }
+
   return (
     <div className="Info">
       <div className="Info-container">
+        <div className="Info-back-header">
+          <div className="header-modal" onClick={ShowInfoPage}>
+            <img src="/src/static/icon/arrow_back.svg" alt="icono para atras" />
+          </div>
+        </div>
         <div className="Info-content">
           <div className="Info-header">
             <div className="Info-header-image">
@@ -37,10 +50,15 @@ function Info() {
             </div>
             <div className="Info-body">
               <details open>
-                <summary>
+                <summary onClick={ShowInfo}>
                   <strong>Datos del contacto</strong>
-                  <div className="Icon">
-                    <img src="/src/static/icon/close.svg" alt="close" />
+                  <div>
+                    <img
+                      className={Show ? '' : 'flip'}
+                      id="show"
+                      src="/src/static/icon/close.svg"
+                      alt="close"
+                    />
                   </div>
                 </summary>
                 <div className="Info-data">

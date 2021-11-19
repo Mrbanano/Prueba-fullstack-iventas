@@ -39,8 +39,6 @@ function LoginForm() {
       return alert('Datos incorrectos')
     }
     const msg = await login(Email, Password)
-    console.log(msg)
-    alert(msg)
   }
   return (
     <div className="LoginForm">
@@ -77,7 +75,7 @@ function LoginForm() {
                   onChange={onChange}
                 />
               </div>
-              <button className="btn_Login">Iniciar sesión</button>
+              <button className="btn btn_login">Iniciar sesión</button>
             </form>
           </div>
         </div>
