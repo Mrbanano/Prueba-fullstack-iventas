@@ -5,10 +5,10 @@
   box-sizing: border-box;
   block-size: 100vh;
   overflow: hidden;
-  display: block;
+  display: none;
 }
 
-.Info-visible {
+.InfoVisible {
   display: block;
 }
 .Info-container {

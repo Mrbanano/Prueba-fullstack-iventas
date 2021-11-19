@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import { ChatContext } from '../../../context/Chat/ChatContex'
 import './Info.css'
 
-function Info({ showInfo, setshowInfo }) {
+function Info({ showInfo, setshowInfo, InfoVisible }) {
   const { chatState } = useContext(ChatContext)
   const [Show, setShow] = useState(true)
   const {
@@ -27,7 +27,7 @@ function Info({ showInfo, setshowInfo }) {
   }
 
   return (
-    <div className="Info">
+    <div className={`Info ${InfoVisible} `}>
       <div className="Info-container">
         <div className="Info-back-header">
           <div className="header-modal" onClick={ShowInfoPage}>

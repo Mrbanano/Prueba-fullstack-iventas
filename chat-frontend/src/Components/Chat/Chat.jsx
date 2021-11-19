@@ -8,7 +8,7 @@ import './Chat.css'
 function Chat() {
   const [showInfo, setshowInfo] = useState(false)
   return showInfo ? (
-    <Info showInfo={showInfo} setshowInfo={setshowInfo} />
+    <Info showInfo={showInfo} setshowInfo={setshowInfo}  InfoVisible='InfoVisible'/>
   ) : (
     <div className="Chat Chat-visible">
       <div className="Chat-container">

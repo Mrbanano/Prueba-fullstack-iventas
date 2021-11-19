@@ -14,6 +14,7 @@ function Conversation() {
     <div className="conversation-content">
       {messages.map((message) => (
         <Message
+          key={('Message', message._id)}
           message={message}
           type={message.Sender == auth.id ? 'sent' : 'received'}
         />

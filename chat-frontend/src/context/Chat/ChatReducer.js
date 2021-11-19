@@ -20,8 +20,12 @@ export const chatReducer = (state, action) => {
         ...state,
         receiver: null
       }
+
     case types.newMessage:
-      if (state.receiver.id === action.payload.Receiver) {
+      if (
+        state.receiver._id === action.payload.Receiver ||
+        state.receiver._id === action.payload.Sender
+      ) {
         return {
           ...state,
           messages: [...state.messages, action.payload]

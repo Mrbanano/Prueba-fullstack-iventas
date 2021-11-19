@@ -1,6 +1,9 @@
 import './Message.css'
+import Moment from 'moment'
 
 function Message({ message, type }) {
+  const { Message, createdAt } = message
+  console.log(message)
   return (
     <div className="Message">
       <div
@@ -11,10 +14,7 @@ function Message({ message, type }) {
         }
       >
         <div className="Message-content">
-          <p className="message">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard{' '}
-          </p>
+          <p className="message">{Message}</p>
         </div>
       </div>
     </div>

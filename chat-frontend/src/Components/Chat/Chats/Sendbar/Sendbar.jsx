@@ -21,11 +21,13 @@ function Sendbar() {
       return
     }
 
-    socket?.emit('messagePersonal', {
+    socket.emit('PrivateMessage', {
       Sender: auth.id,
       Receiver: chatState.receiver._id,
       Message: Message
     })
+
+    //dispatch(sendMessage(Message))
 
     setMessage('')
   }

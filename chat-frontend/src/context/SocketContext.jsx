@@ -35,10 +35,8 @@ export const SocketProvider = ({ children }) => {
     })
   }, [socket, dispatch])
 
-  //listen new message
-
   useEffect(() => {
-    socket?.on('messagePersonal', (message) => {
+    socket?.on('PrivateMessage', (message) => {
       dispatch({
         type: types.newMessage,
         payload: message

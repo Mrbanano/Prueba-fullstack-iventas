@@ -8,7 +8,6 @@ const {
 class Sockets {
   constructor(io) {
     this.io = io
-
     this.socketEvents()
   }
 
@@ -24,19 +23,18 @@ class Sockets {
       }
 
       const user = await userConnected(id)
-      console.log('[✔️ ]', ` Se conecto el cliente ${id}`)
+      console.log('[✔️ ]', ` Se conecto el cliente ${user._id}`)
 
       //join in room socket
       socket.join(id)
-
       //all user
       this.io.emit('ShowContacts', await getUsers())
 
       // listen client message
-      socket.on('messagePersonal', async (payload) => {
+      socket.on('PrivateMessage', async (payload) => {
         const message = await savedMessage(payload)
-        this.io.to(payload.Receiver).emit('message-personal', message)
-        this.io.to(payload.Sender).emit('message-personal', message)
+        this.io.to(payload.Receiver).emit('PrivateMessage', message)
+        this.io.to(payload.Sender).emit('PrivateMessage', message)
       })
 
       // On disconnect
