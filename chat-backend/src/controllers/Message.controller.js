@@ -11,7 +11,7 @@ const getMessagebyUserId = async (req, res, next) => {
         { Sender: requested, Recipient: applicant }
       ]
     })
-      .sort({ createdAt: 'desc' })
+      .sort({ createdAt: 'asc' })
       .limit(30)
 
     res.status(200).json({

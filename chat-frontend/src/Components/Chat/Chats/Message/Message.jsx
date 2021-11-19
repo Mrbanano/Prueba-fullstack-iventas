@@ -1,9 +1,7 @@
 import './Message.css'
-import Moment from 'moment'
 
 function Message({ message, type }) {
   const { Message, createdAt } = message
-  console.log(message)
   return (
     <div className="Message">
       <div

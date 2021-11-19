@@ -11,7 +11,7 @@ function Conversation() {
   const { messages } = chatState
 
   return (
-    <div className="conversation-content">
+    <div id="conversation-content" className="conversation-content">
       {messages.map((message) => (
         <Message
           key={('Message', message._id)}
