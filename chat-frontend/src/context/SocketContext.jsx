@@ -3,6 +3,7 @@ import { useSocket } from '../hook/useSocket'
 import { AuthContext } from '../auth/AuthContext'
 import { ChatContext } from './Chat/ChatContex'
 import { types } from '../types/types'
+import { scrollToBottom, scrollToBottomDelay } from '../helpers/scroll'
 
 export const SocketContext = createContext()
 
@@ -41,6 +42,7 @@ export const SocketProvider = ({ children }) => {
         type: types.newMessage,
         payload: message
       })
+      scrollToBottomDelay('conversation-content')
     })
   }, [socket, dispatch])
 

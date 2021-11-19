@@ -8,8 +8,11 @@
   align-items: center;
 }
 
+.Select {
+  background-color: rgba(238, 238, 238, 0.876);
+}
+
 .Contact-Avatar {
-  z-index: -99;
   margin-inline-start: 6px;
   margin-inline-end: 12px;
   inline-size: 50px;
@@ -17,7 +20,6 @@
   position: relative;
 }
 .status {
-  z-index: -99;
   position: absolute;
   bottom: 0;
   right: 0;
