@@ -23,7 +23,7 @@
 @media only screen and (min-width: 768px) {
   .Hero-container {
     inline-size: 36vw;
-    block-size: 100%;
+    block-size: 100vh;
     max-inline-size: 557px;
     display: flex;
     justify-content: center;

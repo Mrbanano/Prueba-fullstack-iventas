@@ -35,6 +35,20 @@
   .Inbox-header {
     display: block;
   }
+  .Inbox-logout {
+    margin-block-start: 0px;
+    font: var(--inputTextMobile);
+    font-weight: 700;
+    color: var(--green);
+    background-color: transparent;
+    border: none;
+  }
+  .Inbox-logout:hover {
+    color: var(--green);
+    background-color: transparent;
+    border: 2px solid var(--green);
+    transform: scale(1.05);
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) 

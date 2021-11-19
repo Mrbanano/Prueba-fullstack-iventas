@@ -1,20 +1,35 @@
+import { useContext } from 'react'
+import { ChatContext } from '../../../../context/Chat/ChatContex'
+import { types } from '../../../../types/types'
 import './Contact.css'
 
-function Contacts() {
+function Contacts({ contact }) {
+  const { dispatch } = useContext(ChatContext)
+
+  const { Avatar, Name, lastName, online } = contact
+  let status = online ? 'online' : 'offline'
+
+  const chatSelected = () => {
+    dispatch({
+      type: types.userSelected,
+      payload: contact
+    })
+  }
+
   return (
-    <div className="Contact">
+    <div className="Contact" onClick={chatSelected}>
       <div className="Contact-container">
         <div className="Contact-content">
           <div className="Contact-Avatar">
-            <img src="https://i.imgur.com/2njx5VH.png" alt="Avatar" />
-            <span className="status online"></span>
+            <img src={Avatar} alt={`Avatar de ${Name} ${lastName}`} />
+            <span className={`status ${status}`}></span>
           </div>
           <div className="Contact-info">
             <div className="Contact-name">
-              <span>nombre apellido</span>
+              <span>{`${Name} ${lastName}`}</span>
             </div>
             <div className="Contact-status">
-              <span>Estado</span>
+              <span>{status}</span>
             </div>
           </div>
         </div>

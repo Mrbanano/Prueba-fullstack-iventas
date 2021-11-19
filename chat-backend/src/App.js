@@ -9,7 +9,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 
 
-const AuthRouter = require('./routes/Auth.routes')
+const AuthRouter = require ('./routes/Auth.routes')
 const MessageRouter = require('./routes/Message.routes')
 
 

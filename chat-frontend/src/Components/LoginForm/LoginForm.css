@@ -65,6 +65,48 @@ form {
   color: var(--white);
 }
 
+.btn {
+  margin-block-start: 94px;
+  margin-block-end: 90px;
+  padding-block-start: 11.5px;
+  padding-block-end: 11.5px;
+  inline-size: 249px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  border-radius: 25px;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font: var(--Btn_textMobile);
+  font-weight: 700;
+  color: var(--white);
+  overflow: hidden;
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  color: #fff;
+  outline: none;
+}
+
+.btn_login {
+  border-color: var(--btn_green);
+  color: #fff;
+  outline: none;
+  box-shadow: 0 0 40px 40px var(--btn_green) inset, 0 0 0 0 var(--btn_green);
+  transition: all 150ms ease-in-out;
+}
+.btn_login:hover {
+  color: var(--green);
+  box-shadow: 0 0 10px 0 var(--btn_green) inset, 0 0 10px 4px var(--btn_green);
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .LoginForm {

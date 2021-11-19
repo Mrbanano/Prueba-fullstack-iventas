@@ -1,12 +1,23 @@
+import { useContext } from 'react'
+import { AuthContext } from '../../../../auth/AuthContext'
+import { ChatContext } from '../../../../context/Chat/ChatContex'
 import Message from '../Message/Message'
 import './Conversation.css'
 
 function Conversation() {
-  const a = Array.from(Array(2.0).keys())
+  const { chatState } = useContext(ChatContext)
+  const { auth } = useContext(AuthContext)
+
+  const { messages } = chatState
+
   return (
     <div className="conversation-content">
-      {a.map((item) => (
-        <Message item={item} key={item} />
+      {messages.map((message) => (
+        <Message
+          key={('Message', message._id)}
+          message={message}
+          type={message.Sender == auth.id ? 'sent' : 'received'}
+        />
       ))}
     </div>
   )

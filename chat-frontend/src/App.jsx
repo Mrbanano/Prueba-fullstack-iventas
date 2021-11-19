@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AppRouter from './router/AppRouter'
 import { AuthProvider } from './auth/AuthContext'
 import { SocketProvider } from './context/SocketContext'
+import { ChatProvider } from './context/Chat/ChatContex'
 import './App.css'
 
 function App() {
@@ -10,17 +11,19 @@ function App() {
   const [User, setUser] = useState(null)
 
   return (
-    <AuthProvider>
-      <SocketProvider>
-        <div className="App">
-          <div className="App-container">
-            <div className="App-content">
-              <AppRouter />
+    <ChatProvider>
+      <AuthProvider>
+        <SocketProvider>
+          <div className="App">
+            <div className="App-container">
+              <div className="App-content">
+                <AppRouter />
+              </div>
             </div>
           </div>
-        </div>
-      </SocketProvider>
-    </AuthProvider>
+        </SocketProvider>
+      </AuthProvider>
+    </ChatProvider>
   )
 }
 
