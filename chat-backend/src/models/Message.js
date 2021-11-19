@@ -7,7 +7,7 @@ const schema = new Schema(
       type: Schema.Types.ObjectId,
       required: true
     },
-    Recipient: {
+    Receiver: {
       ref: 'User',
       type: Schema.Types.ObjectId,
       required: true

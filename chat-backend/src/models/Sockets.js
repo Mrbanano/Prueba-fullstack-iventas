@@ -1,7 +1,9 @@
 const { verifyTokenSocket } = require('../middlewares/authJWT')
 const {
   userConnected,
-  userDesconnected
+  userDesconnected,
+  getUsers,
+  savedMessage
 } = require('../controllers/Socket.controller')
 class Sockets {
   constructor(io) {
@@ -24,8 +26,23 @@ class Sockets {
       const user = await userConnected(id)
       console.log('[✔️ ]', ` Se conecto el cliente ${id}`)
 
+      //join in room socket
+      socket.join(id)
+
+      //all user
+      this.io.emit('ShowContacts', await getUsers())
+
+      // listen client message
+      socket.on('messagePersonal', async (payload) => {
+        const message = await savedMessage(payload)
+        this.io.to(payload.Receiver).emit('message-personal', message)
+        this.io.to(payload.Sender).emit('message-personal', message)
+      })
+
+      // On disconnect
       socket.on('disconnect', async () => {
         const user = await userDesconnected(id)
+        this.io.emit('ShowContacts', await getUsers())
         console.log(
           '[❌ ]',
           ` Se desconecto el cliente ${id == null ? ' ' : id}`

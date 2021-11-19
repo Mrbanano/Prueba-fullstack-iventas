@@ -1,11 +1,11 @@
 import './Message.css'
 
-function Message({ item }) {
+function Message({ message, type }) {
   return (
     <div className="Message">
       <div
         className={
-          item % 2 === 0
+          type === 'sent'
             ? 'Message-container sent'
             : ' Message-container received'
         }
