@@ -1,10 +1,11 @@
-import Chat from '../../Components/Chat'
-import Info from '../../Components/Chat/Info'
-import Inbox from '../../Components/Chat/Inbox'
-import ChatSelect from '../../Components/Chat/ChatSelect'
-import './ChatPage.css'
 import { useContext } from 'react'
 import { ChatContext } from '../../context/Chat/ChatContex'
+
+import ChatSelect from '../../Components/Chat/ChatSelect'
+import ChatContent from '../../Components/Chat/ChatContet'
+import Inbox from '../../Components/Chat/Inbox'
+
+import './ChatPage.css'
 
 function ChatPage() {
   const { chatState } = useContext(ChatContext)
@@ -13,14 +14,7 @@ function ChatPage() {
       <div className="ChatPage-container">
         <div className="ChatPage-content">
           <Inbox />
-          {chatState.receiver ? (
-            <div>
-              <Chat />
-              <Info />
-            </div>
-          ) : (
-            <ChatSelect />
-          )}
+          {chatState.receiver ? <ChatContent /> : <ChatSelect />}
         </div>
       </div>
     </div>

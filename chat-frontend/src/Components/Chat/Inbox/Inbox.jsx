@@ -9,8 +9,10 @@ function Inbox() {
       <div className="Inbox-container">
         <div className="Inbox-content">
           <Header />
-          <Title />
-          <Contacts />
+          <div className="Inbox-scroll">
+            <Title />
+            <Contacts />
+          </div>
         </div>
       </div>
     </div>

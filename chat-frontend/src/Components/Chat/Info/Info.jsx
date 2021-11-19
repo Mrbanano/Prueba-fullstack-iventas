@@ -1,19 +1,22 @@
+import { useContext } from 'react'
+import { ChatContext } from '../../../context/Chat/ChatContex'
 import './Info.css'
 
 function Info() {
-  const user = {
-    Name: 'Alejandro',
-    lastName: 'García',
-    Phone: 5520260240,
-    Avatar: 'https://i.postimg.cc/YScKVnc2/Alejandro-Garc-a.png',
-    Email: 'alejandro.García@iventas.com',
-    Age: 38,
-    CURP: 'GAAL78371287319JCJ',
-    Priotiry: 'Baja',
-    Problem: 'Informes',
-    Promotion: '25%',
-    Roles: 'Vendor'
-  }
+  const { chatState } = useContext(ChatContext)
+
+  const {
+    Name,
+    lastName,
+    Phone,
+    Avatar,
+    Email,
+    Age,
+    CURP,
+    Priotiry,
+    Problem,
+    Promotion
+  } = chatState.receiver
 
   return (
     <div className="Info">
@@ -21,11 +24,11 @@ function Info() {
         <div className="Info-content">
           <div className="Info-header">
             <div className="Info-header-image">
-              <img src={user.Avatar} alt="Avatar de " />
+              <img src={Avatar} alt={`Avatar de ${Name} ${lastName}`} />
             </div>
             <div className="Info-header-text">
-              <p className="Info-name-user">{`${user.Name} ${user.lastName}`}</p>
-              <p className="Info-phone-user">{user.Phone}</p>
+              <p className="Info-name-user">{`${Name} ${lastName}`}</p>
+              <p className="Info-phone-user">{Phone}</p>
               <div>
                 <a className="Info-edit-user" href="#">
                   Editar datos
@@ -44,55 +47,55 @@ function Info() {
                   <div className="Info-group">
                     <label htmlFor="email">Correo</label>
                     <div className="Info-field">
-                      <p>{user.Email}</p>
+                      <p>{Email}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Name">Nombre</label>
                     <div className="Info-field">
-                      <p>{user.Name}</p>
+                      <p>{Name}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="lastName">Apellido</label>
                     <div className="Info-field">
-                      <p>{user.lastName}</p>
+                      <p>{lastName}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Phone">Telefono</label>
                     <div className="Info-field">
-                      <p>{user.Phone}</p>
+                      <p>{Phone}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Prioridad">Prioridad</label>
                     <div className="Info-field">
-                      <p>{user.Priotiry}</p>
+                      <p>{Priotiry}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Problema">Problema</label>
                     <div className="Info-field">
-                      <p>{user.Problem}</p>
+                      <p>{Problem}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Promocion">Promocion</label>
                     <div className="Info-field">
-                      <p>{user.Promotion}</p>
+                      <p>{Promotion}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="CURP">CURP</label>
                     <div className="Info-field">
-                      <p>{user.CURP}</p>
+                      <p>{CURP}</p>
                     </div>
                   </div>
                   <div className="Info-group">
                     <label htmlFor="Edad">Edad</label>
                     <div className="Info-field">
-                      <p>{user.Age}</p>
+                      <p>{Age}</p>
                     </div>
                   </div>
                   <div className="space"></div>

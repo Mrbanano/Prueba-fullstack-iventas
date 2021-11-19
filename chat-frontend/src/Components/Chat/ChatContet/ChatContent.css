@@ -1,9 +1,10 @@
 @media only screen and (min-width: 768px) {
-  .ChatSelect {
+  .ChatContent {
     inline-size: 81.5vw;
     max-inline-size: 1246px;
   }
-  .ChatSelect-content {
+  .ChatContent-content {
+    box-sizing: border-box;
     inline-size: 100%;
     block-size: 100vh;
     display: flex;

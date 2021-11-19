@@ -3,7 +3,7 @@ import { AuthContext } from '../../../../auth/AuthContext'
 import './Header.css'
 
 function Header() {
-  const { auth , logout} = useContext(AuthContext)
+  const { auth, logout } = useContext(AuthContext)
 
   return (
     <div className="Inbox-header">
@@ -17,8 +17,8 @@ function Header() {
       <div className="Inbox-header-text">
         <p className="Inbox-header-text-name">{`${auth.Name}  ${auth.lastName}.`}</p>
         <p className="Inbox-header-text-number">{auth.Phone}</p>
-        
-        <button onClick={logout}>
+
+        <button class="Inbox-logout" onClick={logout}>
           Cerrar Sesión
         </button>
       </div>

@@ -1,12 +1,16 @@
+import { useContext } from 'react'
+import { ChatContext } from '../../../../context/Chat/ChatContex'
 import './Header.css'
 function Header() {
+  const { chatState } = useContext(ChatContext)
+  const { Name, lastName, Avatar } = chatState.receiver
   return (
     <header className="Chat-header">
       <div className="Chat-header-image">
-        <img src="https://i.imgur.com/XQgYZYb.png" alt="Avatar de " />
+        <img src={Avatar} alt={`Avatar de ${Name} ${lastName}`} />
       </div>
       <div className="header-info">
-        <p className="header-info-name">Lucía González</p>
+        <p className="header-info-name">{`${Name} ${lastName}`}</p>
       </div>
       <div className="header-modal">
         <img src="/src/static/icon/more_vert.svg" alt="icono para mostrar" />

@@ -103,11 +103,26 @@ summary {
 @media only screen and (min-width: 768px) {
   .Info {
     display: block;
+    inline-size: 25%;
     max-inline-size: 312px;
     background-color: var(--white);
   }
   summary {
     display: flex;
+  }
+  .Info-edit-user {
+    margin-block-end: 15px;
+    display: block;
+  }
+  .Info-data {
+    padding-block-start: 15px;
+  }
+  .Info-field {
+    max-inline-size: 90%;
+    overflow: hidden;
+  }
+  .space {
+    block-size: 400px;
   }
 }
 
