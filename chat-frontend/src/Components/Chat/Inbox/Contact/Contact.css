@@ -1,0 +1,54 @@
+.Contact-content {
+  padding-block-start: 18px;
+  padding-block-end: 18px;
+  border-top: 1px solid rgba(238, 238, 238, 0.876);
+  border-bottom: 1px solid rgba(238, 238, 238, 0.876);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Select {
+  background-color: rgba(238, 238, 238, 0.876);
+}
+
+.Contact-Avatar {
+  margin-inline-start: 6px;
+  margin-inline-end: 12px;
+  inline-size: 50px;
+  block-size: 50px;
+  position: relative;
+}
+.status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  inline-size: 12px;
+  block-size: 12px;
+}
+
+.online {
+  background-color: green;
+}
+.offline {
+  background-color: red;
+}
+.Contact-Avatar > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+.Contact-name > span {
+  text-transform: capitalize;
+  font: var(--Phone);
+  font-weight: 700;
+  z-index: 0;
+}
+
+.Contact-info {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

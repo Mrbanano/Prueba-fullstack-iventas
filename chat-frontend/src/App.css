@@ -1,0 +1,9 @@
+.App {
+  inline-size: 100vw;
+}
+.App-container {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  min-inline-size: 320px;
+  max-inline-size: 1527px;
+}

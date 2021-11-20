@@ -1,0 +1,36 @@
+.Inbox {
+  inline-size: 100%;
+  max-block-size: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: block;
+}
+
+.Inbox-invisible {
+  display: none;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Inbox {
+    display: block;
+    inline-size: 18.5vw;
+    max-inline-size: 287px;
+    block-size: 100vh;
+    overflow: hidden;
+  }
+  .Inbox-scroll {
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) *
+@media only screen and (min-width: 992px) {
+  ...;
+}
+
+ Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {
+  ...;
+}
+
+*/

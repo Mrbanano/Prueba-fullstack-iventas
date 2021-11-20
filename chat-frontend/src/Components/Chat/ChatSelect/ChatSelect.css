@@ -1,0 +1,48 @@
+.ChatSelect {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .ChatSelect {
+    border-left: 2px solid #eee;
+    inline-size: 81.5vw;
+    max-inline-size: 1246px;
+    border-bottom: 10px solid var(--green);
+    display: block;
+    box-sizing: border-box;
+  }
+  .ChatSelect-container {
+    block-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ChatSelect-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ChatSelect-content-img {
+    inline-size: 50%;
+  }
+  .ChatSelect-content-img > img {
+    inline-size: 100%;
+  }
+  .Chat-Selectec-content-text {
+    text-align: center;
+    color: var(--gray);
+  }
+  .Chat-Selectec-content-text > h1 {
+    margin-block-end: 5px;
+  }
+  .Chat-Selectec-content-text > p {
+    margin-block-start: 5px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    inline-size: 70%;
+  }
+  .Chat-Selectec-content-text > hr {
+    inline-size: 75%;
+  }
+}

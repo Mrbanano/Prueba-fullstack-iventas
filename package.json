@@ -4,8 +4,15 @@
   "description": "<h1 align=\"center\">Prueba tecnica Fullstack iVentas</h1>",
   "private": true,
   "scripts": {
-    "dev:backend": "npm run dev --workspace=chat-backend"
+    "dev:backend": "npm run dev --workspace=chat-backend",
+    "dev:frontend": "npm run dev --workspace=chat-frontend",
+    "build" : "npm run build --workspace=chat-frontend",
+    "start": "npm start --workspace=chat-backend"
   },
+  "engines": {
+    "node": "16.10.0",
+    "npm": "7.24.0"
+   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mrbanano/Prueba-fullstack-iventas.git"

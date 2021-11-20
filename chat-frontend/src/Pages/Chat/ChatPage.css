@@ -1,0 +1,7 @@
+.ChatPage-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-inline-size: 320px;
+  max-inline-size: 1527px;
+}

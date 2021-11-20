@@ -1,0 +1,17 @@
+.Login-content {
+  padding-block-end: 50px;
+  box-sizing: border-box;
+  block-size: 100vh;
+  overflow-y: scroll;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Login-content {
+    inline-size: 100vw;
+    block-size: 100vh;
+    max-inline-size: 1527px;
+    display: flex;
+    flex-direction: row;
+  }
+}
