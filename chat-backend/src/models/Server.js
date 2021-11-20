@@ -12,6 +12,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const { urlencoded, json } = require('express')
+const path = require('path')
 /**
  *  initial Setup
  */
@@ -42,10 +43,12 @@ class Server {
   middlewares() {
     this.app.use(cors())
     this.app.use(morgan('dev'))
-    this.app.use(helmet())
     this.app.use(urlencoded({ extended: false }))
     this.app.use(express.json())
-
+    this.app.use(
+      '/',
+      express.static(path.join(__dirname, '../../../chat-frontend/dist'))
+    )
     // Routin
     this.app.use('/chat/api/v1/Auth', AuthRouter)
     this.app.use('/chat/api/v1/Message', MessageRouter)
@@ -59,7 +62,7 @@ class Server {
     this.middlewares()
     this.configurarSockets()
     this.server.listen(this.port, () => {
-      console.log('Server corriendo en puerto:', this.port)
+      console.log('Server on port :', this.port)
     })
   }
 }

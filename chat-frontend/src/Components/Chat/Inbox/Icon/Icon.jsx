@@ -1,3 +1,4 @@
+import IconImg from '/src/static/icon/icon.svg'
 import './Icon.css'
 
 function Icon() {
@@ -5,11 +6,11 @@ function Icon() {
     <div className="Icon">
       <div className="Icon-container">
         <div className="Icon-content">
-          <img src='/src/static/icon/icon.svg' alt="Revisa tus"/>
+          <img src={IconImg} alt="Revisa tus" />
         </div>
       </div>
     </div>
   )
-} 
+}
 
 export default Icon

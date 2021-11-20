@@ -3,16 +3,13 @@ import { AuthContext } from '../../auth/AuthContext'
 import './LoginForm.css'
 
 function LoginForm() {
-  const emailRegexp = new RegExp(
-    /^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i
-  )
-
   const { login } = useContext(AuthContext)
 
   const [form, setform] = useState({
-    Email: 'alejandro.García@iventas.com',
-    Password: 'Contrase%a'
+    Email: '',
+    Password: ''
   })
+
   const onChange = ({ target }) => {
     const { name, value } = target
     setform({
@@ -28,7 +25,7 @@ function LoginForm() {
 
   const isOk = () => {
     const { Email, Password } = form
-    return validateEmail(Email) && Password.length > 0
+    return validateEmail(Email) && Password.length > 8
   }
 
   const onSubmit = async (e) => {
@@ -36,10 +33,12 @@ function LoginForm() {
     const { Email, Password } = form
 
     if (!isOk()) {
+      alert('no se pudo inicar sesion')
       return alert('Datos incorrectos')
     }
     const msg = await login(Email, Password)
   }
+
   return (
     <div className="LoginForm">
       <div className="LoginForm-container">

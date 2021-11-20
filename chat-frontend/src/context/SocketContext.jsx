@@ -7,7 +7,7 @@ import { scrollToBottom, scrollToBottomDelay } from '../helpers/scroll'
 
 export const SocketContext = createContext()
 
-const host = 'http://192.168.1.75:3005'
+const host = '/'
 
 export const SocketProvider = ({ children }) => {
   const { socket, online, connectSocket, desconnectSocket } = useSocket(host)

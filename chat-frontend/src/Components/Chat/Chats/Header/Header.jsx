@@ -1,4 +1,6 @@
 import { useContext } from 'react'
+import ArrowBackIcon from '/src/static/icon/arrow_back.svg'
+import More from '/src/static/icon/more_vert.svg'
 import { ChatContext } from '../../../../context/Chat/ChatContex'
 import { types } from '../../../../types/types'
 import './Header.css'
@@ -21,7 +23,7 @@ function Header({ showInfo, setshowInfo }) {
   return (
     <header className="Chat-header">
       <div className="header-modal  return" onClick={Return}>
-        <img src="/src/static/icon/arrow_back.svg" alt="icono para atras" />
+        <img src={ArrowBackIcon} alt="icono para atras" />
       </div>
       <div className="Chat-header-image">
         <img src={Avatar} alt={`Avatar de ${Name} ${lastName}`} />
@@ -30,7 +32,7 @@ function Header({ showInfo, setshowInfo }) {
         <p className="header-info-name">{`${Name} ${lastName}`}</p>
       </div>
       <div className="header-modal" onClick={ShowInfo}>
-        <img src="/src/static/icon/more_vert.svg" alt="icono para mostrar" />
+        <img src={More} alt="icono para mostrar" />
       </div>
     </header>
   )

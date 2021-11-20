@@ -1,5 +1,5 @@
 import axios from 'axios'
-const basesUrl = 'http://192.168.1.75:3005/chat/api/v1/'
+const basesUrl = '/chat/api/v1/'
 
 export const loginServices = async (credentials) => {
   try {

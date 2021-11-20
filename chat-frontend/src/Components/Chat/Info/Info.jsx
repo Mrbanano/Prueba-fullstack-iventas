@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react'
 import { ChatContext } from '../../../context/Chat/ChatContex'
+import Arrow from '/src/static/icon/arrow_back.svg'
+import ArrowMore from '/src/static/icon/close.svg'
 import './Info.css'
-
 function Info({ showInfo, setshowInfo, InfoVisible }) {
   const { chatState } = useContext(ChatContext)
   const [Show, setShow] = useState(true)
@@ -31,7 +32,7 @@ function Info({ showInfo, setshowInfo, InfoVisible }) {
       <div className="Info-container">
         <div className="Info-back-header">
           <div className="header-modal" onClick={ShowInfoPage}>
-            <img src="/src/static/icon/arrow_back.svg" alt="icono para atras" />
+            <img src={Arrow} alt="icono para atras" />
           </div>
         </div>
         <div className="Info-content">
@@ -56,7 +57,7 @@ function Info({ showInfo, setshowInfo, InfoVisible }) {
                     <img
                       className={Show ? '' : 'flip'}
                       id="show"
-                      src="/src/static/icon/close.svg"
+                      src={ArrowMore}
                       alt="close"
                     />
                   </div>

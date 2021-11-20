@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { SocketContext } from '../../../../context/SocketContext'
 import { AuthContext } from '../../../../auth/AuthContext'
 import { ChatContext } from '../../../../context/Chat/ChatContex'
+import SendIcon from '/src/static/icon/send.svg'
 import './Sendbar.css'
 
 function Sendbar() {
@@ -44,7 +45,7 @@ function Sendbar() {
           onChange={onChange}
         />
         <button className="Send">
-          <img src="/src/static/icon/send.svg" alt="send" />
+          <img src={SendIcon} alt="send" />
         </button>
       </section>
     </form>
