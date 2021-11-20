@@ -25,7 +25,7 @@ function LoginForm() {
 
   const isOk = () => {
     const { Email, Password } = form
-    return validateEmail(Email) && Password.length > 8
+    return validateEmail(Email) && Password.length > 4
   }
 
   const onSubmit = async (e) => {
