@@ -12,11 +12,11 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/portfolio/Mrbanano">
+    <a href="">
       Solucion
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY">
+    <a href="">
       Reto
     </a>
   </h3>
@@ -70,8 +70,20 @@ Desarrollar un chat en donde 2 usuarios puedan mandar mensajes en tiempo real �
 
 - [Node](https://nodejs.org/en/)
 - [React](https://reactjs.org/)
+- [MongoDB](https://reactjs.org/)
 
 ## Solución
+
+- [✅] Existen 2 usuarios en el sistema
+- [✅] El modelo de base de datos cuenta con la informacion requerida
+- [✅] Los usuarios pueden iniciar sesión
+- [✅] El usuario 1 puede mandar mensaje a usuario 2
+- [✅] El usuario 2 puede mandar mensaje a usuario 1
+- [✅] los mensajes son almacenados en MongoAtlas
+
+- [👍] La base de datos esta en MongoDB
+- [👍] Utiliza Mongoose para realizar todas las operaciones en el backend
+- [👍] No solo es responsive, si no que se utilizo mobile first para asegurar el correcto funcionamientos en dispositivos mobiles
 
 ### Backend
 
