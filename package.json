@@ -6,7 +6,7 @@
   "scripts": {
     "dev:backend": "npm run dev --workspace=chat-backend",
     "dev:frontend": "npm run dev --workspace=chat-frontend",
-    "build" : "npm run build --workspace=chat-frontend",
+    "build" : "",
     "start": "npm start --workspace=chat-backend"
   },
   "engines": {
